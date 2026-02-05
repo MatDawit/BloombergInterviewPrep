@@ -1,30 +1,41 @@
-# GrayMatter Interview Coach Pro 🏭
+# INDG Architect Interview Prep v2 🏗️
 
-An AI-powered interview coaching tool designed to help candidates prepare for the **Engineer I (Development Program)** role at GrayMatter Systems. This application provides real-time feedback on interview answers using OpenAI's API and speech recognition.
+An AI-powered interview coaching tool designed to help candidates prepare for the **Web Application Architect 3** role at INDG (Industrial/Defense Digital Group). This application provides real-time feedback on behavioral and system design interview answers using OpenAI's GPT models and a "Bar Raiser" evaluation framework.
 
 ## Features
 
-- **Speech Recognition**: Record your answers directly via microphone
-- **AI-Powered Feedback**: Get structured, actionable feedback using OpenAI's GPT models
-- **Markdown-Formatted Output**: Clear feedback with highlighted strengths, areas for improvement, and professional phrasing suggestions
-- **Interactive Streamlit UI**: User-friendly web interface for a seamless coaching experience
-- **Specific Company Context**: Tailored coaching for GrayMatter Systems culture and values
+- **Speech Recognition**: Record your interview answers directly via microphone
+- **AI-Powered "Bar Raiser" Feedback**: Get structured, expert feedback from a Principal Architect perspective
+- **Behavioral Interview Questions**: Multi-tier behavioral questions (Foundational → Intermediate → Deep Dive)
+- **System Design Questions**: AWS-focused architecture questions with event-driven, serverless, and microservices emphasis
+- **Intelligent Feedback Structure**:
+  - Scorecard (Technical Accuracy, Communication Clarity, Seniority Signal)
+  - Trade-Off Analysis
+  - Mental Model Check
+  - "Level-Up" Rephrase with Principal Architect terminology
+- **Interactive Streamlit UI**: Clean, user-friendly web interface
+- **Technology-Specific Coaching**: Tailored for AWS Serverless, EDA, Microservices, and Micro-frontends
+
+## Technologies & Stack
+
+- **Target Role Stack**: AWS (Serverless focus), Event-Driven Architecture (EDA), Microservices, Micro-frontends
+- **Level**: Senior/Principal Individual Contributor
 
 ## Prerequisites
 
 - Python 3.8+
-- Microphone (for speech recognition)
+- Microphone (for audio recording)
 - OpenAI API key
 
 ## Installation
 
-1. **Clone or navigate to the project directory**:
+1. **Navigate to the project directory**:
 
    ```bash
-   cd ../GrayMatterSystemsInterviewPrep
+   cd BloombergInterviewPrep
    ```
 
-2. **Create and activate the virtual environment**:
+2. **Create and activate a virtual environment**:
 
    ```bash
    python3 -m venv venv
@@ -32,38 +43,55 @@ An AI-powered interview coaching tool designed to help candidates prepare for th
    ```
 
 3. **Install dependencies**:
-
    ```bash
    pip install -r requirements.txt
    ```
 
-   **Note for macOS users**: If you encounter issues installing `pyaudio`, run:
-
-   ```bash
-   CFLAGS="-I/opt/homebrew/include" LDFLAGS="-L/opt/homebrew/lib" pip install pyaudio
-   ```
-
-   (Requires `portaudio` installed via Homebrew: `brew install portaudio`)
-
 ## Setup
+
+Set your OpenAI API key as an environment variable:
+
+```bash
+export OPENAI_API_KEY="your-api-key-here"
+```
 
 ## Usage
 
-1. **Activate the virtual environment**:
+Run the Streamlit application:
+
+```bash
+streamlit run interview_coach.py
+```
+
+The app will open in your browser at `http://localhost:8501`.
+
+### Workflow
+
+1. Select a question category (Behavioral or System Design)
+2. Choose a difficulty level (Foundational, Intermediate, or Deep Dive)
+3. Click to get a random question
+4. Record your answer using your microphone
+5. Submit to receive detailed "Bar Raiser" feedback with:
+   - Technical accuracy scoring
+   - Trade-off analysis
+   - Architectural pattern recognition
+   - Principal-level rephrase of your answer
+
+6. **Activate the virtual environment**:
 
    ```bash
    source venv/bin/activate
    ```
 
-2. **Run the Streamlit app**:
+7. **Run the Streamlit app**:
 
    ```bash
    streamlit run interview_coach.py
    ```
 
-3. **Open your browser** to the local URL (typically `http://localhost:8501`)
+8. **Open your browser** to the local URL (typically `http://localhost:8501`)
 
-4. **Interact with the coach**:
+9. **Interact with the coach**:
    - Use the microphone button to record your answer
    - Or type your answer directly
    - Get AI-powered feedback with professional suggestions
